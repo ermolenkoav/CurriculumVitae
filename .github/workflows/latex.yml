@@ -1,0 +1,49 @@
+
+name: Compile Latex and Release PDF  
+
+on:
+  push:
+    tags:
+      - '*.*.*'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+
+      - name: pdflatex main
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: CurriculumVitae_en.tex
+          compiler: pdflatex
+          args: -synctex=1 -interaction=nonstopmode
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} 
+          asset_path: ./CurriculumVitae_en.pdf
+          asset_name: CurriculumVitae_en.pdf
+          asset_content_type: pdf
