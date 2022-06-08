@@ -2,10 +2,17 @@
 name: Compile Latex and Release PDF  
 
 on:
-  workflow_dispatch:
   push:
+    branches:
+      - master
+      - development
     tags:
       - '*.*.*'
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: string
+        default: DEV
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
