@@ -1,13 +1,10 @@
-
 name: Compile Latex and Release PDF  
 
 on:
   push:
     branches:
-      - master
-      - development
-    tags:
-      - '*.*.*'
+      - main
+      - dev
   workflow_dispatch:
     inputs:
       environment:
