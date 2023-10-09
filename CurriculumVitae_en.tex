@@ -15,17 +15,8 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-
 \documentclass[a4paper,12pt]{memoir} % Font and paper size
-
 \input{structure.tex} % Include the file specifying document layout and packages
-
-%----------------------------------------------------------------------------------------
-%	NAME AND CONTACT INFORMATION 
-%----------------------------------------------------------------------------------------
 
 \userinformation{ % Set the content that goes into the sidebar of each page
 \begin{flushright}
@@ -33,23 +24,21 @@
 \includegraphics[width=1\columnwidth]{photo.jpg}\\[\baselineskip] % Your photo
 \small % Smaller font size
 Alexey Ermolenko \\ % Name
-\href{mailto:ermolenkoav@gmail.com}{Email} \\ % Email
-\href{http://www.linkedin.com/in/ermolenkoav/}{LinkedIn} \\ % Your URL
+\href{https://t.me/ermolenkoav}{Telegram} \\ % Email
+\href{https://www.linkedin.com/in/ermolenkoav/}{LinkedIn} \\ % Your URL
 \href{https://github.com/ermolenkoav}{GitHub} \\
+\href{mailto:ermolenkoav@gmail.com}{Email} \\ % Email
 +7 (918) 565-3601 \\ % Your phone number
 \Sep % Some whitespace
 \textbf{Address} \\
-Rostov-on-Don, Russia \\ % Address 1
+Rostov-on-Don, Russia \\ 
 \vfill % Whitespace under this block to push it up under the photo
 \end{flushright}
 }
 
 %----------------------------------------------------------------------------------------
-
 \begin{document}
-
 \userinformation % Print your information in the left column
-
 \framebreak % End of the first column
 
 %----------------------------------------------------------------------------------------
@@ -57,14 +46,13 @@ Rostov-on-Don, Russia \\ % Address 1
 %----------------------------------------------------------------------------------------
 
 \cvheading{Alexey Ermolenko}
-
 \cvsubheading{Software Engineer}
 
 %----------------------------------------------------------------------------------------
 %	ABOUT ME
 %----------------------------------------------------------------------------------------
 
-\aboutme{About Me}{Actively participated in all stages of life cycle development of software and hardware for big data collection and processing. Including: development of client-server and embedded software by the customer's order, implementation of the maximum number of functionalities with limited computing resources, support and refactoring of third-party and company's legacy software, introduction of new technologies and approaches. Wrote design and supporting documentation, purchased the equipment and materials for the needs of the laboratory. Participated in presentation events: \href{https://youtu.be/1QDFi3-sKCY}{Living Sensors}}
+\aboutme{About Me}{Actively participated in all stages of life cycle development of software and hardware for big data collection and processing. Including: development of highload back-end microservices, SQL and NoSQL database structure design, client-server and embedded software by the client's order, implementation of the maximum number of functionalities with limited computing resources, support and refactoring of third-party and company's legacy software, introduction of new technologies and approaches. Wrote design and supporting development documentation. Participated in presentation events: \href{https://youtu.be/1QDFi3-sKCY}{Living Sensors}}
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
@@ -74,13 +62,14 @@ Rostov-on-Don, Russia \\ % Address 1
 
 \CVItem{Programming}
 {\begin{tabular}{p{0.2\textwidth} p{0.2\textwidth} p{0.2\textwidth}}
-\bluebullet Java & \bluebullet C/C++ & \bluebullet Python \\
-\bluebullet Golang & \bluebullet SQL \\
+\bluebullet Golang & \bluebullet SQL & \bluebullet C/C++ \\
+\bluebullet Java & \bluebullet Python \\
 \end{tabular}}
 
 \CVItem{Computer Software}
 {\begin{tabular}{p{0.2\textwidth} p{0.2\textwidth} p{0.2\textwidth}}
-\bluebullet Linux & \bluebullet Docker Compose & \bluebullet CI/CD \\
+\bluebullet Linux & \bluebullet Docker Compose & \bluebullet K8s \\
+\bluebullet CI/CD \\
 \end{tabular}}
 
 %----------------------------------------------------------------------------------------
@@ -89,25 +78,35 @@ Rostov-on-Don, Russia \\ % Address 1
 
 \CVSection{Experience}
 
+\CVItem{October 2022 - Now, \textit{Software Engineer}, WB Tech ltd.}{
+Detailed achievements:
+\begin{itemize}
+	\item Replaced the NATS cluster with the Kafka cluster of all department services
+	\item Development of integration services 
+	\begin{itemize}
+		\item Golang - fasthttp,pgx,franz-go,clickhouse-go e.t.c
+	\end{itemize}
+	\item Developed database design and implemented a financial analytics system
+	\begin{itemize}
+		\item ClickHouse NoSQL
+	\end{itemize}
+\end{itemize}
+}
+
 \CVItem{October 2021 - June 2022, \textit{Software Engineer}, DDoS-Guard ltd.}{
 Detailed achievements:
 \begin{itemize}
-	\item Working with highload proxy server
+	\item Working with highload proxy server - implementation of new functionality and refactoring 
 	\begin{itemize}
-		\item C++, STL
-		\item Boost
-		\item GoogleTest
-		\item Linux
+		\item C++ - STL, Boost, GoogleTest
 	\end{itemize}
 	\item Development of l4 load balancer
 	\begin{itemize}
-		\item Linux/eBPF
-		\item Golang/\href{https://github.com/cilium/ebpf}{Cilium eBPF}
-		\item Algorithm
+		\item Linux/eBPF, Golang/\href{https://github.com/cilium/ebpf}{Cilium eBPF}
 	\end{itemize}
-	\item Writing support and technical documentation
+	\item Writing technical documentation
 	\begin{itemize}
-		\item \href{Diagrams.net}{Draw.io}
+		\item \LaTeX{}, \href{Diagrams.net}{Draw.io}, 
 	\end{itemize}
 \end{itemize}
 }
@@ -117,18 +116,11 @@ Detailed achievements:
 \begin{itemize}
 	\item Development client-server desktop application
 	\begin{itemize}
-		\item C++, STL
-		\item \href{https://github.com/pocoproject/poco}{POCO Libraries}
-		\item wxWidgets
-		\item GoogleTest
-		\item Win32
-		\item Design patterns
+		\item C++, STL, \href{https://github.com/pocoproject/poco}{POCO Libraries}, wxWidgets, GoogleTest, Win32, Design patterns
 	\end{itemize}
 	\item Customize Chromium browser
 	\begin{itemize}
-		\item C++/STL
-		\item Chromium
-		\item Working inside a large volume of code
+		\item C++ - STL, Chromium, Working inside a large volume of code
 	\end{itemize}
 	\item Writing support and technical documentation
 	\begin{itemize}
@@ -155,17 +147,11 @@ Detailed achievements:
 \begin{itemize}
 	\item Development of client programs to control the experiment using
 	\begin{itemize}
-		\item C/C++, STL
-		\item Qt Widgets
-		\item Boost
-		\item GoogleTest
-		\item Win32
+		\item C/C++ - STL, Qt Widgets, Boost, GoogleTest, Win32
 	\end{itemize}
 	\item Development of electronic devices and software based on technology
 	\begin{itemize}
-		\item Texas Instruments CC2541,CC2540
-		\item Altium Designer
-		\item Atmel AVR
+		\item Texas Instruments CC2541,CC2540, Altium Designer, Atmel AVR
 	\end{itemize}
 	\item Writing support and technical documentation
 	\item Assembly and maintenance of electronic devices
@@ -177,10 +163,8 @@ Detailed achievements:
 \begin{itemize}
 	\item Development of electronic devices and software based on technology
 	\begin{itemize}
-		\item C/C++, STL
-		\item Texas Instruments CC2541,CC2540
-		\item Altium Designer
-		\item Atmel AVR
+		\item C/C++ - STL, 
+		\item Texas Instruments CC2541,CC2540, Altium Designer, Atmel AVR
 	\end{itemize}
 	\item Developing C\#/WPF client programs
 	\item Writing support and technical documentation
@@ -196,84 +180,66 @@ Detailed achievements:
 \begin{itemize}
 	\item Participation in the development of electronic devices
 	\begin{itemize}
-		\item Atmel AVR
-		\item Atmel Designer
+		\item Atmel AVR, Atmel Designer
 	\end{itemize}
 	\item Prototyping electronic circuits
 \end{itemize}
 }
 
+\tiny
+
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
-
 \CVSection{Education}
-
 \CVItem{2011 - 2014, Southern Federal University}{Department of Physics, Postgraduate School}
 
 \CVItem{2006 - 2011, Southern Federal University}{Department of Physics, Medical Physics}
-
 \Sep % Extra whitespace after the end of a section
 
 %----------------------------------------------------------------------------------------
 %	LANGUAGE SKILLS
 %----------------------------------------------------------------------------------------
-
 \CVSection{Language skills}
-
 \CVItem{Russian}{Native}
 
-\CVItem{English}{B1 Pre-Intermediate}
-
+\CVItem{English}{B2 Intermediate}
 \Sep % Extra whitespace after the end of a section
 
 %----------------------------------------------------------------------------------------
 %	NEW PAGE DELIMITER
 %	Place this block wherever you would like the content of your CV to go onto the next page
 %----------------------------------------------------------------------------------------
-
-\clearpage % Start a new page
-
-\userinformation % Print your information in the left column
-
-\framebreak % End of the first column
+%\clearpage % Start a new page
+%\userinformation % Print your information in the left column
+%\framebreak % End of the first column
 
 %----------------------------------------------------------------------------------------
 
 %----------------------------------------------------------------------------------------
 %	ADVANCED TRAINING, COURSES
 %----------------------------------------------------------------------------------------
-
 \CVSection{Advanced training, courses}
-
 \CVItem{2018, Otus}{C++ Developer}
 
 \CVItem{2020, Otus}{Spring Framework Developer}
-
 \Sep % Extra whitespace after the end of a section
 
 %----------------------------------------------------------------------------------------
 %	AWARDS
 %----------------------------------------------------------------------------------------
-
 \CVSection{Awards}
-
 \CVItem{2010, \textit{Department of Physics}, Southern Federal University}{Laureate of the 62nd Student Scientific Conference of SFedU}
-
 \Sep % Extra whitespace after the end of a section
 
 %----------------------------------------------------------------------------------------
 %	INTERESTS
 %----------------------------------------------------------------------------------------
-
 \CVSection{Interests}
-
 \CVItem{Professional}{Software design and development, electronics, problem solving}
 
 \CVItem{Personal}{Hiking, orienteering}
-
 \Sep % Extra whitespace after the end of a section
 
-%----------------------------------------------------------------------------------------
-
+%---------------------------------------------------------------------------------------
 \end{document}
