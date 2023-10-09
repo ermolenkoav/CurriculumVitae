@@ -5,6 +5,8 @@ on:
     branches:
       - main
       - dev
+    tags:
+      - 'v*'
   workflow_dispatch:
     inputs:
       environment:
@@ -33,13 +35,12 @@ jobs:
 
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: elgohr/Github-Release-Action@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
+          title: MyReleaseMessage
+
 
       - name: Upload Release Asset
         id: upload-release-asset 
