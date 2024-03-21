@@ -14,27 +14,18 @@ on:
         type: string
         default: DEV
 
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Set up Git repository
-        uses: actions/checkout@v3
-
+        uses: actions/checkout@v4.1.1
       - name: pdflatex main
         uses: dante-ev/latex-action@latest
         with:
           root_file: CurriculumVitae_en.tex
           compiler: pdflatex
           args: -synctex=1 -interaction=nonstopmode
-
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
