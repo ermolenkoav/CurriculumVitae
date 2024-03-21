@@ -1,19 +1,10 @@
-name: Compile Latex and Release PDF  
+name: Compile Latex and Release PDF
 
 on:
   push:
-    branches:
-      - main
-      - dev
     tags:
-      - 'v*'
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: dev
-        type: string
-        default: DEV
-  
+      - '*.*.*'
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -36,19 +27,22 @@ jobs:
 
       - name: Create Release
         id: create_release
-        uses: elgohr/Github-Release-Action@v5
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          title: MyReleaseMessage
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
 
       - name: Upload Release Asset
-        id: upload-release-asset 
+        id: upload-release-asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} 
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./CurriculumVitae_en.pdf
           asset_name: CurriculumVitae_en.pdf
           asset_content_type: pdf
