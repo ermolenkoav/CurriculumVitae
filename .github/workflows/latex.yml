@@ -26,7 +26,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Set up Git repository
-        uses: actions/checkout@latest
+        uses: actions/checkout@3
 
       - name: pdflatex main
         uses: dante-ev/latex-action@latest
@@ -34,7 +34,6 @@ jobs:
           root_file: CurriculumVitae_en.tex
           compiler: pdflatex
           args: -synctex=1 -interaction=nonstopmode
-
 
       - name: Release
         uses: softprops/action-gh-release@v2
@@ -52,7 +51,6 @@ jobs:
 
             ${{ needs.changelog.outputs.clean_changelog }}
             </details>
-
 
       - name: Upload Release Asset
         id: upload-release-asset
