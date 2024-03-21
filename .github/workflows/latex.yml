@@ -51,14 +51,3 @@ jobs:
 
             ${{ needs.changelog.outputs.clean_changelog }}
             </details>
-
-      - name: Upload Release Asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./CurriculumVitae_en.pdf
-          asset_name: CurriculumVitae_en.pdf
-          asset_content_type: pdf
