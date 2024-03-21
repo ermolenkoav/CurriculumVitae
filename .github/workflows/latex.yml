@@ -38,8 +38,8 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          token: ${{ secrets.GH_OWNER_TOKEN }}
-          tag_name: ${{ needs.changelog.outputs.tag }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag_name: ${{ github.ref_name }}
           prerelease: false
           draft: false
           files: bin/*
