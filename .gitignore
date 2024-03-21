@@ -1,7 +1,8 @@
-/build/
+build
+out
+.idea
 *.aux
 *.log
 *.out
 *.pdf
 *.gz
- 

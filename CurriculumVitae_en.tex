@@ -16,19 +16,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[a4paper,12pt]{memoir} % Font and paper size
-\input{structure.tex} % Include the file specifying document layout and packages
+\input{structure} % Include the file specifying document layout and packages
 
 \userinformation{ % Set the content that goes into the sidebar of each page
 \begin{flushright}
 % Comment out this figure block if you don't want a photo
-\includegraphics[width=1\columnwidth]{photo.jpg}\\[\baselineskip] % Your photo
+\includegraphics[width=1\columnwidth]{photo}\\[\baselineskip] % Your photo
 \small % Smaller font size
-Alexey Ermolenko \\ % Name
-\href{https://t.me/ermolenkoav}{Telegram} \\ % Email
+\textbf{Contacts} \\ % Name
+\href{https://ermolenkoav.t.me/}{Telegram} \\ % Email
 \href{https://www.linkedin.com/in/ermolenkoav/}{LinkedIn} \\ % Your URL
 \href{https://github.com/ermolenkoav}{GitHub} \\
 \href{mailto:ermolenkoav@gmail.com}{Email} \\ % Email
-+7 (918) 565-3601 \\ % Your phone number
++7 (918) 565--36--01 \\ % Your phone number
 \Sep % Some whitespace
 \textbf{Address} \\
 Rostov-on-Don, Russia \\ 
@@ -61,15 +61,13 @@ Rostov-on-Don, Russia \\
 \CVSection{Software Development Skills}
 
 \CVItem{Programming}
-{\begin{tabular}{p{0.2\textwidth} p{0.2\textwidth} p{0.2\textwidth}}
-\bluebullet Golang & \bluebullet SQL & \bluebullet C/C++ \\
-\bluebullet Java & \bluebullet Python \\
+{\begin{tabular}{ l l l l l }
+\bluebullet Golang & \bluebullet SQL & \bluebullet C/C++ & \bluebullet Python & \bluebullet Java \\
 \end{tabular}}
 
 \CVItem{Computer Software}
-{\begin{tabular}{p{0.2\textwidth} p{0.2\textwidth} p{0.2\textwidth}}
-\bluebullet Linux & \bluebullet Docker Compose & \bluebullet K8s \\
-\bluebullet CI/CD \\
+{\begin{tabular}{ l l l }
+\bluebullet Docker & \bluebullet Docker Compose & \bluebullet K8s \\
 \end{tabular}}
 
 %----------------------------------------------------------------------------------------
@@ -81,10 +79,11 @@ Rostov-on-Don, Russia \\
 \CVItem{October 2022 - Now, \textit{Software Engineer}, WB Tech ltd.}{
 Detailed achievements:
 \begin{itemize}
-	\item Replaced the NATS cluster with the Kafka cluster of all department services
+    \item Create ClickHouse databases design and implemented for real-time display of financial metrics
+	\item Replaced the NATS cluster with the Kafka cluster of all user-balance department services
 	\item Development of integration services 
 	\begin{itemize}
-		\item Golang - fasthttp,pgx,franz-go,clickhouse-go e.t.c
+		\item Golang - fasthttp,pgx,clickhouse-go e.t.c
 	\end{itemize}
 	\item Developed database design and implemented a financial analytics system
 	\begin{itemize}
@@ -100,13 +99,13 @@ Detailed achievements:
 	\begin{itemize}
 		\item C++ - STL, Boost, GoogleTest
 	\end{itemize}
-	\item Development of l4 load balancer
+	\item Participated in the development of  of l4 load balancer
 	\begin{itemize}
 		\item Linux/eBPF, Golang/\href{https://github.com/cilium/ebpf}{Cilium eBPF}
 	\end{itemize}
 	\item Writing technical documentation
 	\begin{itemize}
-		\item \LaTeX{}, \href{Diagrams.net}{Draw.io}, 
+		\item \href{Diagrams.net}{Draw.io}, \LaTeX{}, 
 	\end{itemize}
 \end{itemize}
 }
@@ -163,10 +162,9 @@ Detailed achievements:
 \begin{itemize}
 	\item Development of electronic devices and software based on technology
 	\begin{itemize}
-		\item C/C++ - STL, 
+		\item C/C++ - STL, Qt
 		\item Texas Instruments CC2541,CC2540, Altium Designer, Atmel AVR
 	\end{itemize}
-	\item Developing C\#/WPF client programs
 	\item Writing support and technical documentation
 	\begin{itemize}
 		\item \LaTeX{}
@@ -203,7 +201,7 @@ Detailed achievements:
 \CVSection{Language skills}
 \CVItem{Russian}{Native}
 
-\CVItem{English}{B2 Intermediate}
+\CVItem{English}{B1 Strong Pre-Intermediate}
 \Sep % Extra whitespace after the end of a section
 
 %----------------------------------------------------------------------------------------
@@ -215,6 +213,13 @@ Detailed achievements:
 %\framebreak % End of the first column
 
 %----------------------------------------------------------------------------------------
+%	AWARDS
+%----------------------------------------------------------------------------------------
+\CVSection{Awards}
+\CVItem{2022, DDoS-Guard ltd.}{For creativity and unconventional thinking in problem solving}
+
+\CVItem{2010, \textit{Department of Physics}, Southern Federal University}{Laureate of the 62nd Student Scientific Conference of SFedU}
+\Sep % Extra whitespace after the end of a section
 
 %----------------------------------------------------------------------------------------
 %	ADVANCED TRAINING, COURSES
@@ -222,15 +227,8 @@ Detailed achievements:
 \CVSection{Advanced training, courses}
 \CVItem{2018, Otus}{C++ Developer}
 
-\CVItem{2020, Otus}{Spring Framework Developer}
-\Sep % Extra whitespace after the end of a section
-
-%----------------------------------------------------------------------------------------
-%	AWARDS
-%----------------------------------------------------------------------------------------
-\CVSection{Awards}
-\CVItem{2010, \textit{Department of Physics}, Southern Federal University}{Laureate of the 62nd Student Scientific Conference of SFedU}
-\Sep % Extra whitespace after the end of a section
+%\CVItem{2020, Otus}{Spring Framework Developer}
+%\Sep % Extra whitespace after the end of a section
 
 %----------------------------------------------------------------------------------------
 %	INTERESTS
