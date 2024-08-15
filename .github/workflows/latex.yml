@@ -20,18 +20,27 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4.1.1
-      - name: pdflatex main
-        uses: dante-ev/latex-action@latest
-        with:
-          root_file: CurriculumVitae_en.tex
-          compiler: pdflatex
-          args: -synctex=1 -interaction=nonstopmode
+
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: ${{ github.ref_name }}
-          files: ./CurriculumVitae_en.pdf
+          files: |
+            ./resume_en.pdf
+            ./resume_ru.pdf
+          generate_release_notes: false
+          prerelease: false
+          draft: false
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag_name: ${{ github.ref_name }}
+          files: |
+            ./resume_en.pdf
+            ./resume_ru.pdf
           generate_release_notes: false
           prerelease: false
           draft: false
