@@ -41,10 +41,10 @@
 \usepackage{enumitem} % Required for modifying lists
 \setlist{noitemsep,nolistsep} % Remove spacing within and around lists
 
-\setlength{\columnsep}{\baselineskip} % Set the spacing between columns
+\setlength{\columnsep}{\baselineskip}{\rightmargin} % Set the spacing between columns
 
 % Define the left frame (sidebar)
-\newflowframe{0.2\textwidth}{\textheight}{0pt}{0pt}[left]
+\newflowframe{0.2\textwidth}{\textheight}{0pt}{0pt}[left=0pt]
 \newlength{\LeftMainSep}
 \setlength{\LeftMainSep}{0.18\textwidth}
 \addtolength{\LeftMainSep}{1\columnsep}
