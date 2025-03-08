@@ -1,4 +1,4 @@
-name: Compile Latex and Release PDF
+name: Compile and Release Latex  PDF
 
 on:
   push:
@@ -27,5 +27,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           path: | 
-            ./out/resume_*.pdf
-            ./resume_*.pdf
+            ./CurriculumVitae/out/resume_*.pdf
+            ./CurriculumVitae/resume_*.pdf
