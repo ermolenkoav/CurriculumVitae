@@ -14,18 +14,16 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4.1.1
-      - name: Build LaTeX
-        run: |
-          for project in $(ls); do
-          if [ -d "$project" ]; then
-           cd ${project}
-           latexmk -synctex=1 -interaction=nonstopmode -file-line-error -pdf -outdir=$PWD/../ $PWD/${project}
-           cd ..
-          fi
-          done
-      - name: 'Upload Artifact'
-        uses: actions/upload-artifact@v4
+
+      - name: Compile LaTeX
+        uses: dante-ev/latex-action@edge
         with:
-          path: | 
-            ./CurriculumVitae/out/resume_*.pdf
-            ./CurriculumVitae/resume_*.pdf
+          root_file: '*.tex'
+
+      - name: Publish LaTeX
+        run : |
+          git config --global user.email "ermolenkoav@gmail.com"
+          git config --global user.name "Alexey Ermolenko"
+          git add -f $PWD/*.pdf
+          git commit -m "WORKFLOW_COMMIT - Update PDFs [skip ci]"
+          git push
