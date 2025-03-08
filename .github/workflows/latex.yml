@@ -15,9 +15,8 @@ jobs:
           root_file: resume_en.tex
 
       - name: Publish LaTeX
-        run : |
-          git config --global user.email "ermolenkoav@gmail.com"
-          git config --global user.name "Alexey Ermolenko"
-          git add -f $PWD/*.pdf
-          git commit -m "WORKFLOW_COMMIT - Update PDFs [skip ci]"
-          git push
+        uses: actions/upload-artifact@v4
+        with:
+          path: |
+            resume_en.tex
+            resume_ru.tex
