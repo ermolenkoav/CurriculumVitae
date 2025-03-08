@@ -7,7 +7,7 @@ on:
       - dev
     tags:
       - '*.*'
-      - '*.*.*'
+      - 'ver.*.*'
 
 jobs:
   build_latex:
