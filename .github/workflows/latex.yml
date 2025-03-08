@@ -9,14 +9,16 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
 
-      - name: Compile document.tex
+      - name: Compile LaTeX
         uses: dante-ev/latex-action@edge
         with:
           root_file: resume_en.tex
+      - name: Compile LaTeX
+        uses: dante-ev/latex-action@edge
+        with:
+          root_file: resume_ru.tex
 
       - name: Publish LaTeX
         uses: actions/upload-artifact@v4
         with:
-          path: |
-            resume_en.tex
-            resume_ru.tex
+          path: ./*.pdf
