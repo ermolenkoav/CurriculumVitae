@@ -12,12 +12,12 @@ jobs:
       - name: Compile document.tex
         uses: dante-ev/latex-action@edge
         with:
-          root_file: resume_en.tex
+          root_file: ./CurriculumVitae/resume_en.tex
 
       - name: Publish LaTeX
         run : |
           git config --global user.email "ermolenkoav@gmail.com"
           git config --global user.name "Alexey Ermolenko"
-          git add -f $PWD/*.pdf
+          git add -f $PWD/CurriculumVitae/*.pdf
           git commit -m "WORKFLOW_COMMIT - Update PDFs [skip ci]"
           git push
