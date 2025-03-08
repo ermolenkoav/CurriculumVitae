@@ -2,9 +2,6 @@ name: Compile Latex and Release PDF
 
 on:
   push:
-    branches:
-      - main
-      - dev
     tags:
       - '*.*'
       - 'ver.*.*'
