@@ -1,21 +1,15 @@
 name: Compile and Release Latex  PDF
 
-on:
-  push:
-    tags:
-      - '*.*'
-      - 'ver.*.*'
+on: [push]
 
 jobs:
   build_latex:
     runs-on: ubuntu-latest
-    container:
-      image: danteev/texlive:latest
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v2
 
-      - name: Compile LaTeX
+      - name: Compile document.tex
         uses: dante-ev/latex-action@edge
         with:
           root_file: '*.tex'
