@@ -23,9 +23,3 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: ./*.pdf
-
-#      - name: Publish LaTeX
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: resume
-#          path: ./*.pdf
