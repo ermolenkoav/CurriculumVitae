@@ -20,7 +20,7 @@ jobs:
         file: [resume_en.tex, resume_ru.tex]
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@latest
+        uses: actions/checkout@v6.0.2
 
       - name: Compile ${{ matrix.file }}
         uses: dante-ev/latex-action@latest
