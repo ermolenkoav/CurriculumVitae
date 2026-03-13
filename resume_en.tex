@@ -27,49 +27,54 @@
 %	CONTACTS
 %----------------------------------------------------------------------------------------
 
-\textbf{Contacts} \\ % Name
-\href{https://ermolenkoav.t.me/}{Telegram} \\ % Email
-\href{https://www.linkedin.com/in/ermolenkoav/}{LinkedIn} \\ % Your URL
+\textbf{Contacts} \\
+\href{https://ermolenkoav.t.me/}{Telegram} \\
+\href{https://www.linkedin.com/in/ermolenkoav/}{LinkedIn} \\
 \href{https://github.com/ermolenkoav}{GitHub} \\
-\href{https://join.skype.com/invite/OaVc1zBWmoRm}{Skype} \\
-\href{mailto:ermolenkoav@gmail.com}{Email} \\ % Email
-+7 (918) 565--36--01 \\ % Your phone number
-\Sep % Some whitespace
-\textbf{Address} \\
-Rostov-on-Don, Russia \\ 
+\href{mailto:ermolenkoav@gmail.com}{Email} \\
++7 (918) 565--36--01 \\
+\Sep
+\textbf{Location} \\
+Rostov-on-Don, Russia \\
+\Sep
+\textbf{Languages} \\
+Russian --- Native \\
+English --- B2 
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
 \Sep % Some whitespace
 
-\textbf{Programming Skills}
+\textbf{Languages}
 \begin{itemize}[left=0pt]
 	\item Golang
 	\item SQL
-	\item C++
+	\item C/C++
+	\item Python
 \end{itemize}
 
-\Sep % Some whitespace
+\Sep
 
 \textbf{Databases}
 \begin{itemize}[left=0pt]
 	\item PostgreSQL
+	\item MS-SQL
 	\item ClickHouse
 	\item Redis
-	\item MSSQL
+	\item Cassandra (Scylla)
 \end{itemize}
 
-\Sep % Some whitespace
+\Sep
 
-\textbf{Frameworks \& Tools}
-	\begin{itemize}[left=0pt]
-		\item Docker Compose
-		\item Kubernetes
-		\item gRPC
-		\item Kafka
-		\item \href{https://github.com/cilium/ebpf}{Cilium eBPF}
-	\end{itemize}
+\textbf{Tools \& Infra}
+\begin{itemize}[left=0pt]
+	\item Kafka, gRPC, REST
+	\item Kubernetes
+	\item Docker
+	\item GitLab CI
+	\item Prometheus
+\end{itemize}
 \vfill % Whitespace under this block
 
 \end{flushright}
@@ -90,9 +95,7 @@ Rostov-on-Don, Russia \\
 %	ABOUT ME
 %----------------------------------------------------------------------------------------
 
-%	Целью своей работы считаю увеличение показателей консистентности и в некоторых случаях персистентности данных.
-%	При выборе проекта педпочитаю что бы присутствовали технолигии  highload или big data.
-\aboutme{About Me}{Experienced Software Engineer specializing in highload systems, big data processing, and microservice architectures. Passionate about optimizing performance and implementing scalable solutions. Skilled in Golang, SQL, and C++.}
+\aboutme{About Me}{Software Engineer with 10+ years of experience building highload distributed systems (up to 70,000 rps). Transitioned from C++/embedded to Golang backend. Background in low-level programming provides deep understanding of performance optimization. Expertise in financial systems, data pipelines, and microservice architectures.}
 
 %----------------------------------------------------------------------------------------
 %	EXPERIENCE
@@ -100,55 +103,53 @@ Rostov-on-Don, Russia \\
 
 \CVSection{Experience}
 
-\CVItem{September 2024 - Now, \textit{Software Engineer}, Avtomakon ltd.}{
+\CVItem{September 2024 - Present, \textit{Software Engineer}, Techvill ltd.}{
 \begin{itemize}[left=0pt]
-	\item Led monolith decomposition into a service-oriented architecture, optimizing Postgres-based data management via microservices.
+	\item During monolith decomposition into microservice architecture, replaced synchronous exporter with Apache Kafka broker and integrated PostgreSQL as a fallback database for inventory balance.
+	\item Migrated services to a new k8s cluster, integrated clients for external sources and infrastructure metrics following team-wide standards.
+	\item Redesigned data consistency control services in a distributed system.
 \end{itemize}
 }
 
 \CVItem{October 2022 - September 2024, \textit{Software Engineer}, WB Tech ltd.}{
 \begin{itemize}[left=0pt]
-    \item Built a financial analysis system handling from 1,500 to a peak of 70,000 rps, ensuring 99.99\%. ClickHouse cluster was used as the core of the system. To achieve this result, replaced NATS with Kafka in all services of the department.
-	\item At an early stage I participated in the development of a new merchant balance service.
+	\item Built financial analytics platform processing 5,000+ rps in soft real-time mode on top of ClickHouse cluster.
+	\item Migrated messaging infrastructure from NATS to Kafka across all customer balance services, improving throughput and reliability from 97\% to 99.99\%.
+	\item Designed penalty, logistics, and authentication modules for the new premium merchant balance service.
 \end{itemize}
 }
 
 \CVItem{October 2021 - June 2022, \textit{Software Engineer}, DDoS-Guard ltd.}{
 \begin{itemize}[left=0pt]
-	\item Working with highload reverse proxy server: implementation stable functionality, compliance with RFC1945, 2616 and refactoring large codebase.
-	\item Developed a platform to run l4 load balancer.
-	\item Writing technical documentation.
+	\item Maintained and extended highload reverse proxy functionality, ensuring RFC 1945/2616 compliance on a large-scale project.
+	\item Integrated \href{https://github.com/PowerDNS/pdns}{PowerDNS} server backend with Scylla database.
+	\item Developed initial implementation of L4 load balancer platform.
 \end{itemize}
 }
 
 \CVItem{February 2020 - October 2021, \textit{Software Engineer}, Rostpay ltd.}{
 \begin{itemize}[left=0pt]
-	\item Developed a client-side solution for delivering targeted advertising, completely replacing previous approaches.
-	\item Customized Chromium browser.
+	\item Developed thick client solution for targeted advertising delivery, replacing legacy system entirely.
+	\item Customized Chromium browser for embedded advertising platform.
 \end{itemize}
 }
 
 \CVItem{November 2017 - January 2020, \textit{Software Engineer}, R\&D Center for Neurotechnology, SFedU.}{
 \begin{itemize}[left=0pt]
-	% В проекте основанном на небехеоверистических принципах разрабатывал часть системы которая оцифровывала данные с
-%	электроэнцефалографа и передавала их для дальнейшей обработки на кластер нвидии
-	\item Development of electronic devices and software based on technology.
-	\item Development of client programs to control the experiment using.
-	\item Wrote support and technical documentation.
+	\item Developed EEG data acquisition systems and software for physiological experiments.
+	\item Built client applications for experiment control and real-time data processing.
 \end{itemize}
 }
 
 \CVItem{February 2015 - October 2017, \textit{Software Engineer}, Don-Strike ltd.}{
 \begin{itemize}[left=0pt]
-	\item Development of IoT devices and software for the physiology laboratory.
-	\item Wrote support and technical documentation.
+	\item Participated in development and prototyping of IoT devices and their documentation.
 \end{itemize}
 }
 
 \CVItem{September 2013 - February 2015, \textit{Junior Software Engineer}, FGANU Research Institute Spetsvuzavtomatika.}{
 	\begin{itemize}[left=0pt]
-		\item Participation in the development of IoT devices. Replaced Altium Designer instead of EAGLE in circuit board development processes.
-		\item Prototyping electronic circuits.
+		\item Participated in development and prototyping of IoT devices and their documentation. Migrated PCB design workflow from EAGLE to Altium Designer.
 	\end{itemize}
 }
 
@@ -160,7 +161,7 @@ Rostov-on-Don, Russia \\
 \userinformation % Print your information in the left column
 \framebreak % End of the first column
 
-\tiny
+\normalsize
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
@@ -183,21 +184,26 @@ Rostov-on-Don, Russia \\
 \Sep % Extra whitespace after the end of a section
 
 %----------------------------------------------------------------------------------------
-%	ADVANCED TRAINING, COURSES
+%	CERTIFICATIONS & COURSES
 %----------------------------------------------------------------------------------------
-\CVSection{Advanced training, courses}
-\CVItem{2018, Otus}{C++ Developer}
 
-\CVItem{2020, Otus}{Spring Framework Developer}
+\CVSection{Certifications \& Courses}
+
+\CVItem{2026, Aristov Tech}{\href{https://aristov.tech/certs/AlexeyErmolenko.pdf}{PostgreSQL Optimization 5.0}}
+
+\CVItem{2020, Otus}{Spring Framework Developer --- enterprise architecture patterns}
+
+\CVItem{2018, Otus}{C++ Developer --- foundation for systems programming}
+
 \Sep % Extra whitespace after the end of a section
 
 %----------------------------------------------------------------------------------------
 %	INTERESTS
 %----------------------------------------------------------------------------------------
 \CVSection{Interests}
-\CVItem{Professional}{Software design and development, design electronics systems, problem solving}
+\CVItem{Professional}{Software development, electronic device development}
 
-\CVItem{Personal}{Mountain hiking, orienteering}
+\CVItem{Personal}{Mountain hiking}
 \Sep % Extra whitespace after the end of a section
 
 %---------------------------------------------------------------------------------------
